@@ -1,0 +1,53 @@
+* {
+    max-width: 100%;
+}
+
+body {
+    color: hotpink;
+    background-color: aliceblue;
+    font-family: "Cutive Mono", monospace;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    max-width: 100%;
+}
+
+img {
+    width: 50%;
+    margin-top: 25px;
+}
+
+#quote-text {
+    max-width: 70%;
+    text-align: center;
+}
+
+p {
+    font-size: 24px;
+}
+
+button {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background: pink;
+    color: deeppink;
+    font-size: 100%;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: deeppink;
+    color: pink;
+}

@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import mainpic from "./mainpic.jpg";
+import css from "./styles.css";
+import axios from "axios";
+import { async } from "q";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    state = { quote: [] };
+
+    onButtonClick = async () => {
+        const response = await axios.get(
+            "https://leslie-knope-quotes.herokuapp.com/quotes"
+        );
+
+        this.setState({ quote: response.data });
+    };
+
+    render() {
+        return (
+            <div id="container">
+                <img src={mainpic} />
+                <h1>Leslie Knope Quote Generator</h1>
+                <button onClick={this.onButtonClick}>Press for quote</button>
+                <p id="quote-text">{this.state.quote}</p>
+            </div>
+        );
+    }
 }
 
 export default App;
